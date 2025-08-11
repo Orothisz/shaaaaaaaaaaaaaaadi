@@ -163,7 +163,7 @@ function CardOpen({ open }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0 }}
-            className={bg-gradient-to-r ${PRIMARY} bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl}
+            className={`bg-gradient-to-r ${PRIMARY} bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl`}
           >
             {COUPLE}
           </motion.h2>
