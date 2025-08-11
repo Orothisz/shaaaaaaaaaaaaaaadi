@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Heart, Calendar, MapPin, Send, Camera, Clock, X } from "lucide-react";
 
 /**
- * Fully animated single‑file wedding invitation website
+ * Fully animated single-file wedding invitation website
  * — Tech: React + TailwindCSS + Framer Motion
  *
  * Quick edits:
@@ -18,7 +18,7 @@ const DATE_ISO = "2025-12-20T18:00:00+05:30";
 const VENUE_NAME = "Greev Valley FBD";
 const VENUE_ADDR = "RPS Green Valley, Faridabad — Haryana";
 const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/dir//RPS+Green+Valley,+Sector+42,+Faridabad,+Haryana/@28.4722754,77.2926726,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x390ce73789af522b:0x8ea6628776cf3302!2m2!1d77.2972601!2d28.4724444!3e0?entry=ttu"; // replace with exact pin
+  "https://www.google.com/maps/dir//RPS+Green+Valley,+Sector+42,+Faridabad,+Haryana/@28.4722754,77.2926726,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x390ce73789af522b:0x8ea6628776cf3302!2m2!1d77.2972601!2d28.4724444!3e0?entry=ttu";
 
 // Brand palette (Tailwind classes)
 const PRIMARY = "from-rose-500 to-pink-500"; // gradient start→end
@@ -294,8 +294,8 @@ function Details() {
           </a>
         </InfoCard>
         <InfoCard icon={<Heart className="h-5 w-5" />} label="Dress Code">
-          <div className="text-sm text-neutral-600">Traditional festive • Hint of {" "}
-            <span className="font-medium">rose & gold</span>
+          <div className="text-sm text-neutral-600">
+            Traditional festive • Hint of <span className="font-medium">rose & gold</span>
           </div>
         </InfoCard>
       </motion.div>
@@ -410,7 +410,7 @@ function CdBox({ label, value }) {
 function Gallery() {
   // Replace src with couple photos (local uploads or URLs)
   const imgs = [
-    "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1505247964246-1f0a90443c36?q=80&w=1200&auto=format&fit=crop",
@@ -596,7 +596,7 @@ function RSVP() {
           <textarea
             name="msg"
             placeholder="Leave a wish or note for the couple"
-            className="h-28 w-full resize-none rounded-xl border border-neutral-210 bg-neutral-50 px-3 py-2 text-sm outline-none ring-rose-200 focus:bg-white focus:ring"
+            className="h-28 w-full resize-none rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none ring-rose-200 focus:bg-white focus:ring"
           />
         </div>
         <div className="md:col-span-2 flex items-center justify-between">
