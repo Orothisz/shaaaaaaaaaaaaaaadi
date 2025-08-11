@@ -4,7 +4,7 @@ import { Heart, Calendar, MapPin, Send, Camera, Clock, X } from "lucide-react";
 
 /**
  * Fully animated single‑file wedding invitation website
- * — Tech: React + TailwindCSS + Framer Motion (works in Canvas)
+ * — Tech: React + TailwindCSS + Framer Motion
  *
  * Quick edits:
  *  - COUPLE = "Madhav & Namya"
@@ -17,7 +17,8 @@ const COUPLE = "Madhav & Namya";
 const DATE_ISO = "2025-12-20T18:00:00+05:30";
 const VENUE_NAME = "Greev Valley FBD";
 const VENUE_ADDR = "RPS Green Valley, Faridabad — Haryana";
-const GOOGLE_MAPS_URL = "https://www.google.com/maps/dir//RPS+Green+Valley,+Sector+42,+Faridabad,+Haryana/@28.4722754,77.2926726,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x390ce73789af522b:0x8ea6628776cf3302!2m2!1d77.2972601!2d28.4724444!3e0?entry=ttu"; // replace with exact pin
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/dir//RPS+Green+Valley,+Sector+42,+Faridabad,+Haryana/@28.4722754,77.2926726,16z/data=!4m9!4m8!1m0!1m5!1m1!1s0x390ce73789af522b:0x8ea6628776cf3302!2m2!1d77.2972601!2d28.4724444!3e0?entry=ttu"; // replace with exact pin
 
 // Brand palette (Tailwind classes)
 const PRIMARY = "from-rose-500 to-pink-500"; // gradient start→end
@@ -58,7 +59,10 @@ function popupNext(state, action) {
 // Helper tests for toDHMS
 (function dhmsTests() {
   const t = toDHMS(1000 * (2 * 86400 + 3 * 3600 + 4 * 60 + 5));
-  console.assert(t.days === "02" && t.hours === "03" && t.minutes === "04" && t.seconds === "05", "toDHMS failed");
+  console.assert(
+    t.days === "02" && t.hours === "03" && t.minutes === "04" && t.seconds === "05",
+    "toDHMS failed"
+  );
 })();
 
 export default function WeddingInvite() {
@@ -230,7 +234,7 @@ function CardPattern({ side }) {
   return (
     <div className="relative h-full w-full overflow-hidden rounded-[inherit]">
       {/* Soft gradient */}
-      <div className={absolute inset-0 bg-gradient-to-br ${PRIMARY} opacity-10} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${PRIMARY} opacity-10`} />
       {/* Gold borders */}
       <div className="absolute inset-3 rounded-[22px] border-2 border-amber-300/70" />
       {/* Paisley-ish SVG filigree */}
@@ -306,7 +310,7 @@ function InfoCard({ icon, label, children }) {
       className="group rounded-2xl border border-white/80 bg-white p-5 shadow-xl shadow-rose-100/60 ring-1 ring-black/5"
     >
       <div className="mb-3 flex items-center gap-2 text-neutral-500">
-        <div className={grid h-9 w-9 place-items-center rounded-xl ${ACCENT_BG} text-white}>{icon}</div>
+        <div className={`grid h-9 w-9 place-items-center rounded-xl ${ACCENT_BG} text-white`}>{icon}</div>
         <span className="text-sm font-semibold tracking-wide text-neutral-600">{label}</span>
       </div>
       <div className="text-sm leading-6 text-neutral-700">{children}</div>
@@ -349,7 +353,7 @@ function TimelineItem({ time, title, desc, flip }) {
         transition={{ duration: 0.6 }}
         className="grid items-center gap-3 md:grid-cols-2"
       >
-        <div className={rounded-2xl bg-white p-5 shadow-lg ring-1 ring-black/5 ${flip ? "md:order-last" : ""}}>
+        <div className={`rounded-2xl bg-white p-5 shadow-lg ring-1 ring-black/5 ${flip ? "md:order-last" : ""}`}>
           <div className="mb-1 flex items-center gap-2 text-sm text-neutral-500">
             <Clock className="h-4 w-4" /> {time}
           </div>
@@ -396,7 +400,7 @@ function Countdown({ dateISO }) {
 function CdBox({ label, value }) {
   return (
     <div className="rounded-2xl bg-gradient-to-br from-white to-rose-50 p-4 shadow-inner">
-      <div className={text-3xl font-bold ${ACCENT_TEXT}}>{value}</div>
+      <div className={`text-3xl font-bold ${ACCENT_TEXT}`}>{value}</div>
       <div className="text-[11px] uppercase tracking-wider text-neutral-500">{label}</div>
     </div>
   );
@@ -461,7 +465,9 @@ function DonatePopup() {
   const close = () => {
     setOpen(false);
     setShowTrigger(true);
-    try { localStorage.setItem("donateClosed", "1"); } catch {}
+    try {
+      localStorage.setItem("donateClosed", "1");
+    } catch {}
   };
 
   const reopen = () => {
@@ -474,14 +480,14 @@ function DonatePopup() {
     <>
       {/* Manual trigger button (shows when popup is closed) */}
       <AnimatePresence>
-        {(!open && showTrigger) ? (
+        {!open && showTrigger ? (
           <motion.button
             key="shagun-trigger"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 6 }}
             onClick={reopen}
-            className={fixed bottom-4 left-4 z-40 inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-black/5 bg-gradient-to-br ${PRIMARY}}
+            className={`fixed bottom-4 left-4 z-40 inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-white shadow-lg ring-1 ring-black/5 bg-gradient-to-br ${PRIMARY}`}
             aria-label="Open Shagun popup"
             type="button"
           >
@@ -522,7 +528,7 @@ function DonatePopup() {
             </button>
 
             <div className="pl-8">
-              <h4 className={bg-gradient-to-r ${PRIMARY} bg-clip-text text-lg font-extrabold tracking-tight text-transparent}>
+              <h4 className={`bg-gradient-to-r ${PRIMARY} bg-clip-text text-lg font-extrabold tracking-tight text-transparent`}>
                 DONATE SHAGUN
               </h4>
               <p className="mt-1 text-xs leading-5 text-neutral-600">
@@ -540,8 +546,12 @@ function DonatePopup() {
               <div className="mt-3 flex items-center justify-between gap-2 rounded-xl bg-white p-2 text-[13px] ring-1 ring-rose-200">
                 <div className="font-mono text-neutral-700">9971172740@fam</div>
                 <button
-                  onClick={() => { try { navigator.clipboard && navigator.clipboard.writeText("9971172740@fam"); } catch {} }}
-                  className={rounded-lg ${ACCENT_BG} px-2 py-1 text-xs font-semibold text-white}
+                  onClick={() => {
+                    try {
+                      navigator.clipboard && navigator.clipboard.writeText("9971172740@fam");
+                    } catch {}
+                  }}
+                  className={`rounded-lg ${ACCENT_BG} px-2 py-1 text-xs font-semibold text-white`}
                   type="button"
                 >
                   Copy
@@ -586,13 +596,13 @@ function RSVP() {
           <textarea
             name="msg"
             placeholder="Leave a wish or note for the couple"
-            className="h-28 w-full resize-none rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm outline-none ring-rose-200 focus:bg-white focus:ring"
+            className="h-28 w-full resize-none rounded-xl border border-neutral-210 bg-neutral-50 px-3 py-2 text-sm outline-none ring-rose-200 focus:bg-white focus:ring"
           />
         </div>
         <div className="md:col-span-2 flex items-center justify-between">
           <div className="text-xs text-neutral-500">We’ll reply with your pass & table info.</div>
           <button
-            className={inline-flex items-center gap-2 rounded-xl ${ACCENT_BG} px-4 py-2 text-sm font-semibold text-white shadow hover:brightness-95 active:scale-[0.99]}
+            className={`inline-flex items-center gap-2 rounded-xl ${ACCENT_BG} px-4 py-2 text-sm font-semibold text-white shadow hover:brightness-95 active:scale-[0.99]`}
           >
             <Send className="h-4 w-4" /> Send RSVP
           </button>
@@ -635,7 +645,7 @@ function Footer() {
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className={mx-auto inline-flex items-center gap-3 rounded-2xl bg-gradient-to-br ${PRIMARY} px-5 py-3 text-white shadow-lg}
+          className={`mx-auto inline-flex items-center gap-3 rounded-2xl bg-gradient-to-br ${PRIMARY} px-5 py-3 text-white shadow-lg`}
         >
           <Heart className="h-5 w-5" />
           <span className="font-semibold tracking-wide">Can’t wait to celebrate with you!</span>
@@ -685,6 +695,10 @@ function SectionHeader({ title, subtitle }) {
 }
 
 function ScrollButton({ to, children, variant = "primary" }) {
+  const classes =
+    variant === "secondary"
+      ? "bg-white/80 ring-1 ring-black/5 backdrop-blur hover:bg-white"
+      : `${ACCENT_BG} text-white hover:brightness-95`;
   return (
     <a
       href={to}
@@ -693,11 +707,7 @@ function ScrollButton({ to, children, variant = "primary" }) {
         const el = document.querySelector(to);
         if (el && "scrollIntoView" in el) el.scrollIntoView({ behavior: "smooth" });
       }}
-      className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold shadow active:scale-[0.99] ${
-        variant === "secondary"
-          ? "bg-white/80 ring-1 ring-black/5 backdrop-blur hover:bg-white"
-          : ${ACCENT_BG} text-white hover:brightness-95
-      }`}
+      className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold shadow active:scale-[0.99] ${classes}`}
     >
       {children}
     </a>
@@ -723,7 +733,7 @@ function Petal({ i }) {
   return (
     <div
       className="absolute -top-10"
-      style={{ left: ${left}%, animation: petal 14s linear infinite, animationDelay: ${delay}s }}
+      style={{ left: `${left}%`, animation: `petal 14s linear infinite`, animationDelay: `${delay}s` }}
     >
       <svg
         width={32 * scale}
@@ -776,6 +786,6 @@ function niceDate(iso) {
       minute: "2-digit",
     });
   } catch {
-    return iso;
-  }
+    return iso;
+  }
 }
