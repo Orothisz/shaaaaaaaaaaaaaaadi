@@ -651,7 +651,7 @@ function Footer() {
           <span className="font-semibold tracking-wide">Can’t wait to celebrate with you!</span>
         </motion.div>
         <p className="mt-4 text-xs text-neutral-500">
-          Built with ♥ — update names, date & venue in code comments.
+          Built with ♥ by Sameer.
         </p>
       </div>
     </footer>
