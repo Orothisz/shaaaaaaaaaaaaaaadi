@@ -651,7 +651,8 @@ function Footer() {
           <span className="font-semibold tracking-wide">Can’t wait to celebrate with you!</span>
         </motion.div>
         <p className="mt-4 text-xs text-neutral-500">
-          Built with ♥ by Sameer.
+            Built with ♥ by{" "}
+            <a href="https://instagram.com/sameerjhambb">Sameer</a>.
         </p>
       </div>
     </footer>
