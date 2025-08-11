@@ -191,7 +191,7 @@ function CardOpen({ open }) {
             transition={{ delay: 1.3 }}
             className="mt-2 flex items-center gap-2 text-neutral-500"
           >
-            <Heart className={${ACCENT_TEXT} h-5 w-5} />
+            <Heart className={`${ACCENT_TEXT} h-5 w-5`} />
             <span className="text-sm">With love, families invite you to celebrate.</span>
           </motion.div>
         </div>
