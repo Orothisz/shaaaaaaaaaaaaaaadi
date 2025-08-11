@@ -410,12 +410,12 @@ function CdBox({ label, value }) {
 function Gallery() {
   // Replace src with couple photos (local uploads or URLs)
   const imgs = [
-  "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1505247964246-1f0a90443c36?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1200&auto=format&fit=crop",
+  "https://i.postimg.cc/3rPTr1h9/Whats-App-Image-2025-08-11-at-17-28-15-d271a608.jpg",
+    "https://i.postimg.cc/HnbPkQ0P/Whats-App-Image-2025-08-11-at-17-28-34-5ed182dd.jpg",
+    "https://i.postimg.cc/4xW2y4tZ/Whats-App-Image-2025-08-11-at-17-28-34-a5f01f2c.jpg",
+    "https://i.postimg.cc/wBSVR1BK/Whats-App-Image-2025-08-11-at-17-28-34-f7b46c88.jpg",
+    "https://i.postimg.cc/XvyKWnks/Whats-App-Image-2025-08-11-at-17-29-07-f5ddb205.jpg",
+    "https://i.postimg.cc/SNTcznZZ/Whats-App-Image-2025-08-11-at-17-31-40-424a831e.jpg",
   ];
 
   return (
